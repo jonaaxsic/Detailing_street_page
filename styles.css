@@ -172,8 +172,7 @@ h3{font-size:1.2rem;font-weight:600}
 }
 .hero-bg-gradient{
   position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse 55% 55% at 70% 50%,rgba(41, 38, 38, 0.12) 0%,transparent 70%),
-             radial-gradient(ellipse 35% 40% at 20% 80%,rgba(204, 199, 199, 0.07) 0%,transparent 70%);
+  background:none;
 }
 .particles-container{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .particle{
@@ -209,9 +208,9 @@ h3{font-size:1.2rem;font-weight:600}
 .hero-visual{display:flex;justify-content:center;align-items:center}
 .hero-image-wrapper{position:relative;width:100%;max-width:460px;animation:floatImg 6s ease-in-out infinite;will-change:transform}
 @keyframes floatImg{0%,100%{transform:translateY(0) rotate(0deg)}33%{transform:translateY(-16px) rotate(1.5deg)}66%{transform:translateY(-7px) rotate(-1deg)}}
-.hero-img{width:100%;max-height:380px;border-radius:var(--radius-xl);box-shadow:none;object-fit:contain;aspect-ratio:unset}
-.hero-image-glow{position:absolute;bottom:-18px;left:10%;right:10%;height:28px;background:radial-gradient(ellipse at center,rgba(204,0,0,.28) 0%,transparent 70%);pointer-events:none;filter:blur(10px);animation:glowPulse 4s ease-in-out infinite;border-radius:50%}
-@keyframes glowPulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:.85;transform:scale(1.06)}}
+.hero-img{width:100%;max-height:380px;border-radius:0;box-shadow:none;object-fit:contain;aspect-ratio:unset;mix-blend-mode:screen}
+.hero-image-glow{position:absolute;bottom:-22px;left:15%;right:15%;height:32px;background:radial-gradient(ellipse at center,rgba(204,0,0,.45) 0%,transparent 70%);pointer-events:none;filter:blur(14px);animation:glowPulse 4s ease-in-out infinite;border-radius:50%}
+@keyframes glowPulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.1)}}
 .hero-badge{position:absolute;background:#fff;color:var(--dark);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.78rem;padding:7px 13px;border-radius:100px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:6px}
 .hero-badge-1{top:18px;left:-8px;color:var(--red)}
 .hero-badge-2{bottom:18px;right:-8px}
@@ -303,6 +302,8 @@ h3{font-size:1.2rem;font-weight:600}
 .resultado-info h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--dark);margin-bottom:6px}
 .resultado-info p{font-size:.86rem;color:var(--text-3)}
 
+
+
 .stats-band{display:flex;align-items:center;justify-content:center;gap:44px;background:var(--dark);border-radius:var(--radius-xl);padding:44px 36px}
 .stat-block{text-align:center}
 .stat-big-number{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.8rem;font-weight:800;color:#fff;line-height:1}
@@ -350,8 +351,8 @@ h3{font-size:1.2rem;font-weight:600}
 .nosotros{padding:96px 0;background:var(--bg);border-top:1px solid var(--border)}
 .nosotros-grid{display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:center}
 .nosotros-image-col{display:flex;justify-content:center}
-.nosotros-img-wrapper{position:relative;width:180px;height:180px}
-.nosotros-logo-img{width:160px;height:160px;object-fit:contain;border-radius:50%;background:#1a1a1a;padding:18px;border:2px solid rgba(255,255,255,.1);box-shadow:0 4px 24px rgba(0,0,0,.5);animation:floatImg 7s ease-in-out infinite}
+.nosotros-img-wrapper{position:relative;width:210px;height:210px}
+.nosotros-logo-img{width:190px;height:190px;object-fit:contain;border-radius:50%;background:#1a1a1a;padding:18px;border:2px solid rgba(255,255,255,.1);box-shadow:0 4px 24px rgba(0,0,0,.5);animation:floatImg 7s ease-in-out infinite}
 .nosotros-img-glow{display:none}
 .nosotros-badge-float{position:absolute;bottom:8px;right:-18px;background:var(--red);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.72rem;font-weight:700;padding:7px 14px;border-radius:100px;display:flex;align-items:center;gap:5px;box-shadow:var(--shadow-md)}
 .nosotros-bio{font-size:.97rem;color:var(--text-2);margin-bottom:18px;line-height:1.8}

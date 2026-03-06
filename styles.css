@@ -172,8 +172,8 @@ h3{font-size:1.2rem;font-weight:600}
 }
 .hero-bg-gradient{
   position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse 55% 55% at 70% 50%,rgba(204,0,0,.12) 0%,transparent 70%),
-             radial-gradient(ellipse 35% 40% at 20% 80%,rgba(204,0,0,.07) 0%,transparent 70%);
+  background:radial-gradient(ellipse 55% 55% at 70% 50%,rgba(41, 38, 38, 0.12) 0%,transparent 70%),
+             radial-gradient(ellipse 35% 40% at 20% 80%,rgba(204, 199, 199, 0.07) 0%,transparent 70%);
 }
 .particles-container{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .particle{
@@ -209,9 +209,9 @@ h3{font-size:1.2rem;font-weight:600}
 .hero-visual{display:flex;justify-content:center;align-items:center}
 .hero-image-wrapper{position:relative;width:100%;max-width:460px;animation:floatImg 6s ease-in-out infinite;will-change:transform}
 @keyframes floatImg{0%,100%{transform:translateY(0) rotate(0deg)}33%{transform:translateY(-16px) rotate(1.5deg)}66%{transform:translateY(-7px) rotate(-1deg)}}
-.hero-img{width:100%;border-radius:var(--radius-xl);box-shadow:0 20px 70px rgba(0,0,0,.6),0 0 50px rgba(204,0,0,.2);object-fit:cover;aspect-ratio:4/3}
-.hero-image-glow{position:absolute;inset:-18px;background:radial-gradient(ellipse at center,rgba(204,0,0,.2) 0%,transparent 70%);pointer-events:none;animation:glowPulse 4s ease-in-out infinite}
-@keyframes glowPulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:.9;transform:scale(1.04)}}
+.hero-img{width:100%;max-height:380px;border-radius:var(--radius-xl);box-shadow:none;object-fit:contain;aspect-ratio:unset}
+.hero-image-glow{position:absolute;bottom:-18px;left:10%;right:10%;height:28px;background:radial-gradient(ellipse at center,rgba(204,0,0,.28) 0%,transparent 70%);pointer-events:none;filter:blur(10px);animation:glowPulse 4s ease-in-out infinite;border-radius:50%}
+@keyframes glowPulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:.85;transform:scale(1.06)}}
 .hero-badge{position:absolute;background:#fff;color:var(--dark);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.78rem;padding:7px 13px;border-radius:100px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:6px}
 .hero-badge-1{top:18px;left:-8px;color:var(--red)}
 .hero-badge-2{bottom:18px;right:-8px}

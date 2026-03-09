@@ -20,21 +20,37 @@ export function initForm() {
     btn.innerHTML = "<span>Enviando...</span>";
 
     setTimeout(() => {
-      // Formatear el mensaje para WhatsApp
-      const mensajeWA = `Hola! Me gustaría agendar una hora para mis focos.%0A%0A*Nombre:* ${nombre}%0A*Teléfono:* ${telefono}%0A*Auto:* ${auto}%0A*Estado:* ${mensaje}`;
-      const numeroWA = "56927450414"; // Número extraído del href flotante
-      const urlWA = `https://wa.me/${numeroWA}?text=${mensajeWA}`;
+      // Enviar el correo usando FormSubmit en segundo plano (AJAX)
+      fetch("https://formsubmit.co/ajax/jonathan.anomisar@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          Asunto: "Nueva solicitud de cotización web",
+          Nombre: nombre,
+          Telefono: telefono,
+          Auto: auto,
+          Estado_Focos: mensaje
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        showFormMessage("✅ ¡Mensaje enviado! Te contactaremos pronto.", "success");
+        form.reset();
+        btn.disabled = false;
+        btn.innerHTML = '<span>Agenda tu hora</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+      })
+      .catch(error => {
+        showFormMessage("❌ Hubo un error al enviar el correo. Intenta escribirme por WhatsApp.", "error");
+        btn.disabled = false;
+        btn.innerHTML = '<span>Agenda tu hora</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+      });
 
-      // Abrir WhatsApp en una nueva pestaña
-      window.open(urlWA, "_blank");
-
-      showFormMessage("✅ ¡Redirigiendo a WhatsApp!", "success");
-      form.reset();
-      btn.disabled = false;
-      btn.innerHTML = '<span>Agenda tu hora</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
     }, 600);
   });
-
+  
   function showFormMessage(text, type) {
     let msg = document.getElementById("form-message");
     if (!msg) {

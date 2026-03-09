@@ -1,0 +1,60 @@
+/* css/layout.css */
+/* Section paddings and backgrounds */
+.hero { min-height: 100vh; background: linear-gradient(150deg, #0d0d0d 0%, #1a1a1a 55%, #0d0d0d 100%); position: relative; display: flex; align-items: center; overflow: hidden; padding-top: 80px; }
+.hero-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding: 50px 0 80px; }
+
+.social-proof { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 26px 0; overflow: hidden; }
+
+.servicios { padding: 96px 0; background: var(--bg); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+.proceso { padding: 96px 0; background: var(--dark); position: relative; overflow: hidden; }
+.proceso-steps { display: flex; align-items: flex-start; gap: 0; }
+.proceso-step { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }
+
+.resultados { padding: 96px 0; background: var(--bg-alt); }
+.resultados-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 64px; }
+
+.precios { padding: 96px 0; background: var(--bg); }
+.precios-container { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 40px; }
+
+.testimonios { padding: 96px 0; background: var(--bg-alt); }
+.testimonios-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+
+.nosotros { padding: 96px 0; background: var(--bg); border-top: 1px solid var(--border); }
+.nosotros-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: center; }
+
+.cta-section { background: var(--dark); padding: 96px 0; text-align: center; position: relative; overflow: hidden; }
+.contacto { padding: 96px 0; background: var(--bg); }
+.contacto-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 56px; align-items: start; }
+
+/* Navbar Layout */
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0; transition: all .35s ease; }
+.navbar.scrolled { background: rgba(17,17,17,.97); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,.07); box-shadow: 0 2px 20px rgba(0,0,0,.4); padding: 11px 0; }
+.nav-container { display: flex; align-items: center; justify-content: space-between; }
+.nav-brand { display: flex; align-items: center; gap: 10px; }
+.nav-links { display: flex; align-items: center; gap: 4px; }
+
+/* Footer Layout */
+.footer { background: var(--dark); padding: 68px 0 36px; color: rgba(255,255,255,.6); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 52px; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.07); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: .78rem; }
+
+/* Responsive Grids */
+@media(max-width: 1024px) {
+  .services-grid, .resultados-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .proceso-steps { flex-direction: column; align-items: center; gap: 28px; }
+  .precios-container { grid-template-columns: 1fr; }
+}
+
+@media(max-width: 768px) {
+  .hero-container { display: flex; flex-direction: column-reverse; gap: 36px; text-align: center; }
+  .services-grid, .resultados-grid, .testimonios-grid, .nosotros-grid, .contacto-grid, .footer-grid { grid-template-columns: 1fr; gap: 36px; text-align: center;}
+  .nav-links { display: none; }
+  .footer-bottom { flex-direction: column; gap: 7px; text-align: center; }
+}
+
+@media(max-width: 480px) {
+  .servicios, .proceso, .resultados, .precios, .testimonios, .nosotros, .cta-section, .contacto { padding: 68px 0; }
+}
